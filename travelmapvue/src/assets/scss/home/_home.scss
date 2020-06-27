@@ -1,0 +1,27 @@
+.home {
+  width: calc(100% - 4px);
+  height: calc(100vh - 4px);
+  border: $yellow 2px solid;
+  .trip-container {
+  	display: flex;
+  	justify-content: center;
+  }
+
+  .filter {
+  	position: absolute;
+  	top: 40px;
+  	right: 50px;
+  	font-weight: bold;
+    font-size: 18px;
+  	color: $bluegray;
+  	background: $yellow;
+  	padding: 8px 15px;
+  	border-radius: 7px;
+  	z-index: 3;
+    transition: box-shadow .3s;
+    &:hover {
+      box-shadow: 0 0 11px $blackshadow;
+    }
+  }
+}
+
