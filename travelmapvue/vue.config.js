@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require('webpack');
 
 module.exports = {
   devServer: {
@@ -9,5 +10,12 @@ module.exports = {
       preProcessor: "scss",
       patterns: [path.resolve(__dirname, "./src/assets/scss/index.scss")]
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        mapboxgl: 'mapbox-gl',
+      }),
+    ],
   }
 };

@@ -5,7 +5,7 @@
     </div>
     <button @click="isVisible = !isVisible" class="filter" > {{buttonName}} </button>
     <Aside v-bind:class="{ visible: isVisible }" class="aside" :classValue="isVisible"></Aside>
-      <Map v-if="trips.length > 0" :trips="trips" :feautureTrips="filterTrips" ></Map>
+      <HomeMap v-if="trips.length > 0" :trips="trips" :feautureTrips="filterTrips" ></HomeMap>
   </main>
 </template>
 
@@ -14,7 +14,7 @@
   import { mapGetters } from 'vuex'
   import Aside from '@/components/home/Aside.vue'
   import FeaturedTrip from '@/components/home/FeaturedTrip.vue'
-  import Map from '@/components/home/Map.vue'
+  import HomeMap from '@/components/home/HomeMap.vue'
 
   export default {
     name: 'home',
@@ -45,7 +45,7 @@
     components: {
       Aside,
       FeaturedTrip,
-      Map
+      HomeMap
     }
   }
 </script>

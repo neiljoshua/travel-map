@@ -21,7 +21,7 @@ export const store =  new Vuex.Store({
     trip: (state, getters) => (key) => {
       return getters.trips.find( trip => trip.city == key )
     },
-    featuredTrips: state =>{
+    featuredTrips: state => {
       return state.trips.filter(trip => trip.acf.feature == true )
     }
   },

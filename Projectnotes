@@ -1,0 +1,39 @@
+Project notes:
+Use this to add ACF to composer.json
+https://github.com/ffraenz/private-composer-installer
+
+Issue with ACF version and Roots version:
+1)Deleted VENDORS folder
+2)Then ran 'composer clearcache'
+
+08/08/20
+
+How to Resolve “WordPress Asking for FTP Credentials” Error?
+
+The error usually occurs when the following code is missing from your  wp-config.php  file;
+
+define('FS_METHOD','direct');
+
+
+Activating user root in macOS Catalina:
+
+Step 1
+
+Finally, and in a much simpler way, we have the terminal to carry out the activation or deactivation process of the root user in macOS Catalina, if our goal is to activate it, we access the terminal and execute the following command:
+
+ Dsenableroot
+
+Step 2
+
+By pressing Enter it will be necessary to enter the password of the administrator user and after this assign the password to the root user, when we execute it, we will see a message confirming that the user has been correctly activated in macOS Catalina:
+ ( hint "same")
+
+Now, to deactivate the root user, we must execute the following command:
+ dsenableroot -d
+
+
+8/10/20
+
+Files permissions where change in the projects folder with:
+
+sudo chown -R _www:_www /Users/neiljoshua/projects/
