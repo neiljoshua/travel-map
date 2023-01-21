@@ -28,3 +28,105 @@
     },
   }
 </script>
+<style lang="scss" scoped>
+
+  .trip-info {
+    padding: 20px;
+    width: calc( 100% - 40px);
+    text-align: left;
+    font-size: 0;
+    @include media-min-width(mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 30px;
+      width: calc( 100% - 60px);
+    }
+    @include media-min-width(tablet) {
+      padding: 60px 40px;
+      width: calc( 100% - 80px);
+    }
+    @include media-min-width(desktop) {
+      padding: 60px 0;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    &__city {
+      font-size: 30px;
+      width: 100%;
+      color: $bluegray;
+      @include media-min-width(mobile) {
+        font-size: 38px;
+      }
+      @include media-min-width(tablet) {
+        font-size: 40px;
+      }
+      @include media-min-width(desktop) {
+        font-size: 55px;
+      }
+    }
+    &__country {
+      width: 100%;
+      font-size: 13px;
+      color: $darkgray;
+      @include media-min-width(mobile) {
+        font-size: 14px;
+      }
+      @include media-min-width(tablet) {
+        font-size: 15px;
+      }
+      @include media-min-width(desktop) {
+        font-size: 16px;
+      }
+    }
+    &__description {
+      padding: 20px 0;
+      letter-spacing: 2;
+      line-height: 1.5;
+      font-size: 14px;
+      @include media-min-width(mobile) {
+        font-size: 16px;
+      }
+      @include media-min-width(tablet) {
+        font-size: 17px;
+      }
+      @include media-min-width(desktop) {
+        font-size: 19px;
+      }
+    }
+    &__date {
+      font-size: 10px;
+      @include media-min-width(mobile) {
+        font-size: 11px;
+      }
+      @include media-min-width(tablet) {
+        font-size: 12px;
+      }
+      @include media-min-width(desktop) {
+        font-size: 13px;
+      }
+    }
+    &__map {
+      width: 100%;
+      @include media-min-width(mobile) {
+        display: inline-block;
+        width: 45%;
+        margin: auto;
+      }
+      img {
+        width: 100%;
+        border: 1px solid $bluegray;
+      }
+    }
+    &__copy {
+      width: 100%;
+      margin-bottom: 20px;
+      @include media-min-width(mobile) {
+        display: inline-block;
+        width: 45%;
+        margin: auto;
+      }
+    }
+  }
+
+</style>

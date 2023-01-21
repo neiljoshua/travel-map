@@ -1,9 +1,9 @@
 <template>
   <main class="trip">
-    <TripHero :tripHeroInfo="tripInfo(cityName)" ></TripHero>
-    <TripInfo :trip="tripInfo(cityName)"></TripInfo>
-    <div v-if="tripInfo(cityName)" class="trip-gallery" >
-      <TripGalleryImage  v-for="photo in tripInfo(cityName).photos" :key="photo.name" :photo="photo"></TripGAlleryImage>
+    <TripHero :tripHeroInfo="tripInfo(cityRoute)" ></TripHero>
+    <TripInfo :trip="tripInfo(cityRoute)"></TripInfo>
+    <div v-if="tripInfo(cityRoute)" class="trip-gallery">
+      <TripGalleryImage  v-for="photo in tripInfo(cityRoute).photos" :key="photo.name" :photo="photo"></TripGAlleryImage>
     </div>
   </main>
 </template>
@@ -25,10 +25,7 @@
     computed: {
       ...mapGetters({
         tripInfo: 'trip'
-      }),
-      cityName: function() {
-        return this.cityRoute.replace('-',' ');
-      }
+      })
     },
     components: {
       TripHero,
@@ -38,3 +35,29 @@
   }
 
 </script>
+<style lang="scss" scoped>
+
+  .trip {
+    display: block;
+    color: $black;
+    @include media-min-width(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  .router-link-active {
+    color: $white;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+
+  .trip-gallery {
+    border: 4px $yellow solid;
+    width: calc( 100% - 8px);
+    font-size: 0;
+    background: $bluegray;
+  }
+
+</style>

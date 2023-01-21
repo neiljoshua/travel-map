@@ -10,7 +10,7 @@
     mounted() {
 
       mapboxgl.accessToken = process.env.VUE_APP_MAP
-      console.log(mapboxgl.accessToken);
+      // console.log(mapboxgl.accessToken);
       var map = new mapboxgl.Map({
           container: 'trips-map',
           style: 'mapbox://styles/mapbox/light-v9',
@@ -25,6 +25,8 @@
           this.trips.forEach(function(trip) {
               var el = document.createElement('div');
               el.className = 'marker';
+              el.setAttribute('name', trip.city );
+              // console.log('Marker element',el);
               new window.mapboxgl.Marker(el)
                   .setLngLat([parseFloat(trip.latitude), parseFloat(trip.longitude)])
                   .addTo(map);
@@ -35,7 +37,7 @@
                   .addEventListener('click', () => {
                       map.flyTo({
                           center: [parseFloat(trip.latitude), parseFloat(trip.longitude)],
-                          zoom: 5,
+                          zoom: 9,
                       })
                   ;}
               )
@@ -50,3 +52,13 @@
   }
 
 </script>
+<style lang="scss" scoped>
+
+  .trips-map {
+    width: calc(100% - 6px);
+    height: calc( 100vh - 235px );
+    border: 3px solid $gray;
+    border-radius: 8px;
+  }
+
+</style>

@@ -9,19 +9,18 @@
 
 <script>
 
-import TheNavigation from '@/components/layout/TheNavigation'
+  import TheNavigation from '@/components/layout/TheNavigation'
 
-export default {
-  name: 'App',
-  data() {
-    return {
-      prevHeight: 0,
-    };
-  },
-  components: {
-    TheNavigation
+  export default {
+    name: 'App',
+    data() {
+      return {
+        prevHeight: 0,
+      };
+    },
+    components: {
+      TheNavigation
+    }
   }
-}
 
 </script>
-

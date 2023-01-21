@@ -1,0 +1,88 @@
+##12/12/21 Adding <script steup> to prohect
+
+<script setup>
+	/* eslint-disable */ <-- disbles EsLint from running after this line
+	import TripsList from '@/components/TripsList.vue'
+	import { computed , onMounted } from 'vue'
+	import { useStore } from 'vuex'
+
+	const store = useStore() // calls store
+	const trips = computed(() => store.getters.trips ) // computed is needed to get the getters instead of map getters
+
+	//onMOunted is needed to dispatch the action to call San Isidro API
+	onMounted(()=>{
+		store.dispatch('fetchTrips');
+	})
+</script>
+
+12/13/21
+	Trip view added to project
+
+	Adding props to script setup:
+
+	defineProps and defineEmit
+
+	-Vueconfig.j file has teh css configuration for globals
+12/15/21
+
+#Editing Rouer class name:
+
+Go to router/index.js file.
+
+add this line "linkActiveClass: 'name of your actice link in router'"
+
+const router = createRouter({
+	history: createWebHistory,
+	routes,
+	linkActiveClass: 'name of your actice link in router'  <-- Line added to router/index.js
+})
+
+12/19/21
+
+Using name routes are recommended for scalibilyty:
+
+U
+
+Usiang a path without a name:
+{
+  path: '/trip/:id',
+  component: () => import(/* webpackChunkName: "trip" */ '../views/TripShow.vue')
+},
+
+sing name component and params to pass routes:
+Using path with a name:
+
+{
+  path: '/trip/:id',
+  name: 'Trip.show',
+  component: () => import(/* webpackChunkName: "trip" */ '../views/TripShow.vue')
+},
+
+This allows us to pass the name of the component and the dynamic ID.
+We could modifiy the path but will always go to the correct route:
+
+<router-link
+	v-for="trip in trips"
+	:key="trip.city"
+	class="trips-item"
+	:to="{ name:'Trip.show', params:{ id: trip.city}}" //use name of route and id in params(id: 'trip.city')
+>
+
+
+Installing MapBox:
+
+
+The mapbox was added via npm: npm install mapbox-gl --save
+
+	Add the map to your site
+	Replace 'YOUR_CONTAINER_ELEMENT_ID' with the id of an element on your page where you would like your map.
+
+		var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
+		mapboxgl.accessToken = 'pk.eyJ1IjoibmVpbGpvc2h1YSIsImEiOiJjanV5a3NkNWUwYTh3NDNyb3d4NnEybDZmIn0.V5VZBaTJjY36jzKsIKiP5g';
+		var map = new mapboxgl.Map({
+		container: 'YOUR_CONTAINER_ELEMENT_ID',
+		style: 'mapbox://styles/mapbox/streets-v11'
+
+
+

@@ -1,4 +1,7 @@
 Project notes:
+
+
+
 Use this to add ACF to composer.json
 https://github.com/ffraenz/private-composer-installer
 
@@ -37,3 +40,16 @@ Now, to deactivate the root user, we must execute the following command:
 Files permissions where change in the projects folder with:
 
 sudo chown -R _www:_www /Users/neiljoshua/projects/
+
+
+02/28/21 creating log in pages:
+
+Article used: https://www.smashingmagazine.com/2020/10/authentication-in-vue-js/
+
+7/17/22
+
+ACF 4
+https://travel-map-wordpress.local/wp-json/trips/v1/trip
+
+ACF 5
+https://travel-map-wordpress.local/wp-json/wp/v2/trips

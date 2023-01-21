@@ -3,6 +3,7 @@ tasks.md
 
 node_modules
 /dist
+/travelmapNuxt
 
 # local env files
 .env
