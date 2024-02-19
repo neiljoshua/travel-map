@@ -1,14 +1,10 @@
-tasks.md
 .DS_Store
-Projectnotes
-
 node_modules
 /dist
-wordpress/web/app/themes/twentytwentytwo/
-wordpress/web/app/themes/twentytwentythree/
+project_notes
+
 
 # local env files
-.env
 .env.local
 .env.*.local
 
@@ -16,6 +12,7 @@ wordpress/web/app/themes/twentytwentythree/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # Editor directories and files
 .idea

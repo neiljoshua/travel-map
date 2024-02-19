@@ -36,53 +36,6 @@ function create_post_type_trips() {
   );
 }
 
-function  trips_endpoint( $request_data ) {
-	$args = array(
-		'post_type' => 'trip',
-		'posts_per_page'=> -1,
-		'numberposts'=> -1
-	);
-
-	$posts = get_posts($args);
-	foreach ($posts as $key => $post) {
-		$posts[$key]->acf = get_fields($post->ID);
-		// $posts[$key]->slug = str_replace( home_url(), '',get_permalink($post->ID) );
-		// $posts[$key]->acf['slug'] = $key;
-		$posts[$key]->acf['slug'] = str_replace( home_url(), '',get_permalink($post->ID) );
-	}
-	return  $posts;
-}
-
-add_action( 'rest_api_init', function () {
-	register_rest_route( '/wp/v2/', '/trips/', array(
-			'methods' => 'GET',
-			'callback' => 'trips_endpoint'
-	));
-});
-
-
-function  options_endpoint( $request_data ) {
-
-	$countries = get_field('countries_and_cities', 'option');
-	foreach ($countries as $key => $country) {
-		$country[$key] = get_fields($country);
-	}
-	return  $countries;
-}
-
-add_action( 'rest_api_init', function () {
-	register_rest_route( 'acf/v3/options', '/option/', array(
-			'methods' => 'GET',
-			'callback' => 'options_endpoint'
-	));
-});
-
-
-add_theme_support( 'extralarge' );
-the_post_thumbnail('extralarge');
-add_image_size( 'extralarge', 2000, 2000, true );
-
-require_once('includes/acf_select_options.php');
 
 add_action('wp_rest_user_user_register', 'user_registered');
 function user_registered($user) {
@@ -102,5 +55,11 @@ function add_user_id_response($data, $user){
   return $data;
 }
 
+add_theme_support( 'extralarge' );
+the_post_thumbnail('extralarge');
+add_image_size( 'extralarge', 2000, 2000, true );
+
+require_once('includes/acf_select_options.php');
+require_once('includes/my_endpoints.php');
 
 

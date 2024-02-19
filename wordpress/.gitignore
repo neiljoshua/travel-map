@@ -9,6 +9,9 @@ web/app/uploads/*
 # WordPress
 web/wp
 web/.htaccess
+vendor/*
+!vendor/.gitkeep
+
 
 # Logs
 *.log
@@ -19,7 +22,8 @@ web/.htaccess
 !.env.example
 
 # Composer
-/vendor
+vendor/*
+!vendor/.gitkeep
 
 # WP-CLI
 wp-cli.local.yml

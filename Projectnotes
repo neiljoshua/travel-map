@@ -1,5 +1,26 @@
 Project notes:
 
+03/01/21 Changes after updating packages:
+- Updating roots/wordpress-core-installer (1.1.0 => 1.100.0): Downloading (100%)
+  - Updating composer/installers (v1.9.0 => v1.10.0): Downloading (100%)          - Updating symfony/polyfill-ctype (v1.19.0 => v1.22.1): Downloading (100%)      - Updating vlucas/phpdotenv (v4.1.8 => v4.2.0): Downloading (100%)
+  - Installing firebase/php-jwt (v5.2.1): Downloading (100%)
+  - Installing codelight-eu/wp-api-jwt-auth (1.2.7):Downloading (100%)         )
+  - Updating roave/security-advisories (dev-master 3273709 => dev-master a6bfc5a)
+
+  03/6/21
+  Adding firebase to project for authentification:
+
+
+  Created Firebase account:
+
+  03/13/21
+  Created a private key in firebase project( travel map )
+
+  Using Firebase SDK to connect users
+
+  03/23/21 Removed Firbase. Added WP API user and JWT
+  with
+
 
 
 Use this to add ACF to composer.json
