@@ -62,6 +62,9 @@
   .form-wrapper {
     width: 50%;
     margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    border: $yellow 3px solid;
     &__title{
       display: block;
       text-align: center;
